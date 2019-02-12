@@ -66,7 +66,7 @@ kicks.color = 'cornflower blue';
 kicks.size = 11;
 kicks.price = 51;
 kicks.buy = function(){
-    return 'Now I is a cool kid!'
+    return 'Now I is a cool kid!';
 }
 console.log(kicks);
 /* 
@@ -79,7 +79,11 @@ console.log(kicks);
 
   console.log the object
 */
-
+var plainBox = {}
+plainBox.color = 'blue';
+plainBox.size = 18;
+plainBox.contents = [];
+console.log(plainBox);
 
 /*
 5. Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
