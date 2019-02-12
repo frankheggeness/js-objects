@@ -121,8 +121,8 @@ console.log(stockCar);
  */
 var plainPerson = {};
 function buildPerson(person, nameString, age){
-    plainPerson.name = nameString;
-    plainPerson.age = age;
+    person.name = nameString;
+    person.age = age;
     return person;
 }
 var completePerson = buildPerson(plainPerson, 'Bob', 21);
@@ -307,8 +307,12 @@ console.log(isAutomaticTransmission);
       your results. Consider using `plainPerson` as your driver.
  */
 
-
-
+function addDriver(object, person){
+    object.driver = person
+    return object
+}
+var stockCarWithDriver = addDriver(stockCar, plainPerson);
+console.log(stockCarWithDriver);
 
 /*
     #Final Boss
@@ -342,3 +346,20 @@ console.log(isAutomaticTransmission);
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+var passengerAges = [19, 12 , 21, 22, 16, 9, 19, 20, 15];
+var passengerObj = [ {}, {}, {}, {}, {}, {}, {}, {}, {}]
+function addPassengers(object, nameList, ageList){
+    for (i = 0; i < passengerList.length; i++){
+        buildPerson(passengerObj[i], nameList[i], ageList[i])
+        object.passengers.push(passengerObj[i])
+    }
+    return object
+}
+console.log(addPassengers(stockCarWithDriver, passengerList, passengerAges))
+function displayPassengers(car){
+    for (i = 0; i < car.passengers.length; i ++){
+        console.log(car.passengers[i].name + ', age ' + car.passengers[i].age + ', is riding dirty!')
+    }
+}
+displayPassengers(stockCarWithDriver);
