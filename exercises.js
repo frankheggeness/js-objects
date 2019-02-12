@@ -228,8 +228,8 @@ printOrders(arrayOfObjects)
         to inspect your results.
 */
 var sumObj = {
-    a: 3,
-    b: 53,
+    a: 25,
+    b: 43,
     result: undefined 
 }
 function objectAddition(object){
@@ -254,8 +254,11 @@ console.log(sumObjResult);
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or 
         **create more** objects and invoke your function multiple times.
  */
-
-
+function printObj(object){
+    object.output = object.a + ' + ' + object.b + ' = ' + object.result;
+    return object
+}
+console.log(printObj(sumObj));
 /*
 10. Putting stuff in `plainBox`
         Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a 
